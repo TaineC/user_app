@@ -12,16 +12,6 @@ class App extends Component{
           id: 1,
           name: 'John',
           age: '34'
-        },
-        {
-          id: 2,
-          name: 'Harrison',
-          age: '27'
-        },
-        {
-          id: 3,
-          name: 'Emma',
-          age: '18'
         }
       ]
     }
@@ -40,22 +30,23 @@ class App extends Component{
 
   removeUser = (id) => {
     var users = this.state.users;
-    var filter = users.filter(function(item){return item.id !==id});
+    var filter = users.filter((item) => {return item.id !==id});
     this.setState({users:filter});
   }
 
   updateUser = (id,data) => {
-
+    
   }
 
   render(){
     return(
-      <div class="container">
+      <div className="container">
 
         {this.state.users.map((user) => {
           var userProps = {
             ...user,
-            key: user.id
+            key: user.id,
+            remove: this.removeUser
           };
           return(
             <User {...userProps}/>

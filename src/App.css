@@ -16,7 +16,7 @@
 
 .new-user{
   align-content: center;
-  padding: 2em;
+  padding: 1em 2em;
   justify-content: space-between;
 }
 
@@ -56,10 +56,12 @@ input:focus{
 
 button{
   display: block;
-  margin: auto;
   margin: 0.5em auto;
+  padding: 0.4em 1.5em;
+  border-radius: 0.5em;
   background-color: lightseagreen;
   color: white;
+  font-weight: bold;
 }
 
 button:focus{

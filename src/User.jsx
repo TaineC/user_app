@@ -4,18 +4,33 @@ import './App.css'
 class User extends Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            nameInput: this.id.name,
+            ageInput: this.id.age,
+            editInput: false
+        }
+    }
+
+    removeExistingUser = () => {
+        var id = this.props.id;
+        this.props.remove(id);
+    }
+
+    editExistingUser = () => {
+        
     }
 
     render(){
         return(
-            <div class="user">
-                <i onClick={(e) => {this.removeUser(e.id)}} className="far fa-times-circle remove-user"></i>
-                <div class="photo"></div>
-                <div class="info">
-                    <div class="name">
+            <div className="user">
+                <i onClick={this.removeExistingUser} className="far fa-times-circle remove-user"></i>
+                <div className="photo"></div>
+                <div className="info">
+                    <div className="name">
                         {this.props.name}
                     </div>
-                    <div class="age">
+                    <div className="age">
                         {this.props.age}
                     </div>
                 </div>

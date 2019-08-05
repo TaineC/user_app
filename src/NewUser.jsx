@@ -34,12 +34,12 @@ class NewUser extends Component{
 
     render(){
         return(
-            <div class="user new-user">
-                <form class="add-new-user">
-                    <button class="add-photo">Add Photo</button>
-                    <input onChange={this.nameInputChange} type="text" class="add-name" placeholder="Name"/>
-                    <input onChange={this.ageInputChange} type="text" class="add-age" placeholder="Age"/>
-                    <button onClick={this.submitNewUser} class="add-user" type="submit">Add User</button>
+            <div className="user new-user">
+                <form className="add-new-user">
+                    <button className="add-photo">Add Photo</button>
+                    <input onChange={this.nameInputChange} className="add-name" type="text" placeholder="Name"/>
+                    <input onChange={this.ageInputChange} className="add-age" type="text" placeholder="Age"/>
+                    <button onClick={this.submitNewUser} className="add-user" type="submit">Add User</button>
                 </form>
             </div>
         )
