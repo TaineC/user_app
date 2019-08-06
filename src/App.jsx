@@ -35,7 +35,15 @@ class App extends Component{
   }
 
   updateUser = (id,data) => {
-    
+    var users = this.state.users;
+    var index = users.findIndex(function(user){
+      return user.id == id;
+    });
+
+    var updateUser = {...users[index],...data};
+    users[index] = updateUser;
+
+    this.setState({users});
   }
 
   render(){
@@ -46,7 +54,8 @@ class App extends Component{
           var userProps = {
             ...user,
             key: user.id,
-            remove: this.removeUser
+            remove: this.removeUser,
+            update: this.updateUser,
           };
           return(
             <User {...userProps}/>

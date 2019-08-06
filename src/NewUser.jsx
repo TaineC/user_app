@@ -28,7 +28,7 @@ class NewUser extends Component{
             name: this.state.nameInput,
             age: this.state.ageInput
         }
-
+        this.setState({nameInput: '',ageInput: ''});
         this.props.addUser(data);
     }
 
@@ -37,8 +37,8 @@ class NewUser extends Component{
             <div className="user new-user">
                 <form className="add-new-user">
                     <button className="add-photo">Add Photo</button>
-                    <input onChange={this.nameInputChange} className="add-name" type="text" placeholder="Name"/>
-                    <input onChange={this.ageInputChange} className="add-age" type="text" placeholder="Age"/>
+                    <input onChange={this.nameInputChange} className="add-name" type="text" placeholder="Name" value={this.state.nameInput}/>
+                    <input onChange={this.ageInputChange} className="add-age" type="text" placeholder="Age" value={this.state.ageInput}/>
                     <button onClick={this.submitNewUser} className="add-user" type="submit">Add User</button>
                 </form>
             </div>
